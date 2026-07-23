@@ -1,0 +1,7 @@
+python-telegram-bot==20.7
+telethon==1.36.0
+yt-dlp==2024.11.18
+Pillow==10.3.0
+requests==2.32.3
+python-dotenv==1.0.1
+aiohttp==3.9.5
