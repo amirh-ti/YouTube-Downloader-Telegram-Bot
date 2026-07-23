@@ -16,6 +16,10 @@ read -p "Please enter your Telegram Bot Token: " BOT_TOKEN
 read -p "Please enter your API_ID: " API_ID
 read -p "Please enter your API_HASH: " API_HASH
 read -p "Please enter your SESSION_STRING: " SESSION_STRING
+read -p "Please enter your TARGET_CHANNEL: " TARGET_CHANNEL
+read -p "Please enter your TARGET_CHANNEL_USERNAME: " TARGET_CHANNEL_USERNAME
+read -p "Please enter your DOWNLOAD_DIR: " DOWNLOAD_DIR
+read -p "Please enter your COOKIES_FILE: " COOKIES_FILE 
 
 # Install prerequisites
 echo -e "${YELLOW}Installing prerequisites...${NC}"
@@ -42,13 +46,17 @@ TELEGRAM_TOKEN=$BOT_TOKEN
 API_ID=$API_ID
 API_HASH=$API_HASH
 SESSION_STRING=$SESSION_STRING
+TARGET_CHANNEL=$TARGET_CHANNEL
+TARGET_CHANNEL_USERNAME=$TARGET_CHANNEL_USERNAME
+DOWNLOAD_DIR=$DOWNLOAD_DIR
+COOKIES_FILE=$COOKIES_FILE
 EOF
 
 # Download the main bot file
 curl -o bot.py https://raw.githubusercontent.com/amith-ti/TeleTube/main/TeleTube.py
 
 # Create cookies file
-touch /root/cookies.txt
+# touch /root/cookies.txt
 
 # Configure systemd service
 cat > /etc/systemd/system/youtube-bot.service << 'EOF'
