@@ -45,7 +45,7 @@ SESSION_STRING=$SESSION_STRING
 EOF
 
 # Download the main bot file
-curl -o bot.py https://raw.githubusercontent.com/yourusername/youtube-bot/main/bot.py
+curl -o bot.py https://raw.githubusercontent.com/amith-ti/TeleTube/main/TeleTube.py
 
 # Create cookies file
 touch /root/cookies.txt
