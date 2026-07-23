@@ -28,13 +28,13 @@ apt install -y python3 python3-pip python3-venv ffmpeg aria2 wget curl git
 
 # Clone or create project
 cd /root
-rm -rf youtube_bot
-mkdir -p youtube_bot
-cd youtube_bot
+rm -rf TeleTube
+mkdir -p TeleTube
+cd TeleTube
 
 # Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv TeleTube
+source TeleTube/bin/activate
 
 # Install libraries
 pip install --upgrade pip
@@ -59,16 +59,16 @@ curl -o bot.py https://raw.githubusercontent.com/amith-ti/TeleTube/main/TeleTube
 # touch /root/cookies.txt
 
 # Configure systemd service
-cat > /etc/systemd/system/youtube-bot.service << 'EOF'
+cat > /etc/systemd/system/TeleTube.service << 'EOF'
 [Unit]
-Description=YouTube Download Bot
+Description=YouTube Downloader Bot for telegram
 After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/root/youtube_bot
-Environment="PATH=/root/youtube_bot/venv/bin:/usr/local/bin:/usr/bin:/bin"
-ExecStart=/root/youtube_bot/venv/bin/python /root/youtube_bot/bot.py
+WorkingDirectory=/root/TeleTube
+Environment="PATH=/root/TeleTube/venv/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=/root/TeleTube/venv/bin/python /root/TeleTube/TeleTube.py
 Restart=always
 RestartSec=10
 
